@@ -1,8 +1,11 @@
 # SSHPLUS
 
-apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/rodrigo12xd/SSHPLUS/master/Plus && chmod 777 Plus && ./Plus
+apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/REDHAWKOG/SSHPLUS/master/Plus && chmod 777 Plus && ./Plus
 
 
 #Acessa Root
 
-wget https://raw.githubusercontent.com/rodrigo12xd/SSHPLUS/master/senharoot.sh && chmod 777 senharoot.sh && ./senharoot.sh
+wget https://raw.githubusercontent.com/ogenio/SSHPLUS/master/senharoot.sh && chmod 777 senharoot.sh && ./senharoot.sh
+
+
+
