@@ -1,0 +1,27 @@
+#!/bin/bash
+verif_funx () {
+
+echo -e "\033[1;32m             LIMITADOR DE CUENTAS"
+msg -bar
+echo -e "Esta Opcion Limita las Conexiones de SSH/SSL/DROPBEAR"
+PIDVRF="$(ps aux|grep "${SCPusr}/usercodes verificar"|grep -v grep|awk '{print $2}')"
+if [[ -z $PIDVRF ]]; then
+msg -bar
+echo -ne "\033[1;96m   驴Cada cuantos segundos ejecutar el limitador?\n\033[1;97m  +Segundos = -Uso de CPU | -Segundos = +Uso de CPU\033[0;92m \n                Predeterminado:\033[1;37m 120s\n     Cuantos Segundos (Numeros Unicamente): " && read tiemlim   
+[[ -z "$tiemlim" ]] && tiemlim="120"
+echo "${tiemlim}" > /etc/newadm/ger-user/tiemlim.log
+cd ${SCPusr}
+screen -dmS very ${SCPusr}/usercodes verificar
+else
+for pid in $(echo $PIDVRF); do
+kill -9 $pid &>/dev/null
+done
+[[ -e ${SCPdir}/USRonlines ]] && rm ${SCPdir}/USRonlines
+[[ -e ${SCPdir}/USRexpired ]] && rm ${SCPdir}/USRexpired
+[[ -e ${SCPdir}/USRbloqueados ]] && rm ${SCPdir}/USRbloqueados
+fi
+msg -bar
+[[ -z ${VERY} ]] && verificar="\033[1;32m ACTIVADO " || verificar="\033[1;31m DESACTIVADO "
+echo -e "            $verificar  --  CON EXITO"
+msg -bar
+}
