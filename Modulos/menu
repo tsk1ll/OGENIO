@@ -230,7 +230,7 @@ _userexp=$(printf '%-5s' "$_expuser")
 _tuser=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 clear
 echo -e "\033[01;31m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\033[0m"
-        tput setaf 7 ; tput setab 4 ; tput bold ; printf '%55s%s%-12s\n' "RED HAWK @OOGENIOHACKER" ; tput sgr0
+        tput setaf 7 ; tput setab 4 ; tput bold ; printf '%55s%s%-12s\n' "OGÊNIO HACKER X @OOGENIOHACKER" ; tput sgr0
 echo -e "\033[01;31m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\033[0m"
 echo -e "\033[1;32mSISTEMA              |  MEMÓRIA RAM          |  PROCESSADOR "
 echo -e "\033[1;31mOS: \033[1;37m$_system   | \033[1;31mTOTAL:\033[1;37m$_ram      | \033[1;31mNUCLEO: \033[1;37m$_core\033[0m"
@@ -247,7 +247,7 @@ echo -e "\033[01;34m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
 echo -e "\033[1;34m[\033[1;37m16 •\033[1;34m]\033[1;37m ➩ \033[1;33mMONITOR APP $stson \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m17 •\033[1;34m]\033[1;37m ➩ \033[1;33mBLOQUEAR TORRENT $stsf \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m18 •\033[1;34m]\033[1;37m ➩ \033[1;33mLIMITADOR $stsl \033[0;32m"
-echo -e "\033[1;34m[\033[1;37m19 •\033[1;34m]\033[1;37m ➩ \033[1;33mBAD VPN $stsu \033[0;32m"
+echo -e "\033[1;34m[\033[1;37m19 •\033[1;34m]\033[1;37m ➩ \033[1;33mBADVPN PRO $stsu \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m20 •\033[1;34m]\033[1;37m ➩ \033[1;33mAUTO MENU $autm \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m21 •\033[1;34m]\033[1;37m ➩ \033[1;33mBOT TELEGRAM $stsbot \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m22 •\033[1;34m]\033[1;37m ➩ \033[1;33mBOT TESTE $stsbotteste \033[0;32m"
@@ -274,7 +274,7 @@ case "$x" in
    ;;
    19)
    clear
-   badvpn
+   badpro1
    ;;
    23)
    clear
@@ -284,20 +284,26 @@ case "$x" in
    clear
    echo -e "\E[44;1;37m             AUTO REBOOT              \E[0m"
                                 echo -e "\033[1;31mESSA FUNÇÃO ATIVA REINICIALIZAÇÃO AUTOMÁTICA DA TUA VPS \033[1;33m \033[1;32\033[0m"
-   echo -e "\033[1;31mO HORÁRIO PRÉ DEFINIDO É 00:00 HORAS. \033[1;33m \033[1;32\033[0m"
-   shutdown -r 00:00
+   echo -e "\033[1;31M ESCOLHA UM HORÁRIO PARA O DESLIGAMENTO EX: \033[1;33m00:00 \033[1;32\033[0m"
+echo -ne "\033[1;32mDIGITE A HORA \033[1;33m\033[1;37m: "
+            read escolha
+                echo ""
+                echo -e "\033[1;31m HORÁRIO VÁLIDO!"
+                sleep 4
+                clear
+   shutdown -r +$escolha
    echo -e ""
-   echo -e "\033[1;33mAUTO REBOOT ATIVADO COM SUCESSO \033[0m"
+   echo -e "\033[1;33mAUTO REBOOT AS $escolha ATIVADO COM SUCESSO \033[0m"
    echo -e ""
-   echo -e "\033[1;34m[\033[1;37m01 •\033[1;34m]\033[1;37m > \033[1;33mDESATIVAR REBOOT \033[1;37m(REINICIAR VPS 00:00H. )\033[0;32m"
+   echo -e "\033[1;34m[\033[1;37m01 •\033[1;34m]\033[1;37m > \033[1;33mDESATIVAR REBOOT \033[1;37m\033[0;32m"
    echo -e ""
    echo -ne "\n\033[1;33mENTER \033[1;33mPARA VOLTAR AO \033[1;33mMENU!\033[0m"; read
    ;;
    1)
    clear
    echo -e "\E[44;1;37m             AUTO REBOOT              \E[0m"
-   echo -e "\033[1;31mESSA FUNÇÃO ATIVA REINICIALIZAÇÃO AUTOMÁTICA DA TUA VPS \033[1;33m \033[1;32\033[0m"
-   echo -e "\033[1;31mO HORÁRIO PRÉ DEFINIDO É 00:00 HORAS. \033[1;33m \033[1;32\033[0m"
+   echo -e "\033[1;31mESSA FUNÇÃO DESATIVA A REINICIALIZAÇÃO AUTOMÁTICA DA TUA VPS \033[1;33m \033[1;32\033[0m"
+   echo -e "\033[1;31mO HORÁRIO PRÉ DEFINIDO $escolha SERÁ DESATIVADO \033[1;33m \033[1;32\033[0m"
    shutdown -c
 echo -e "\033[1;33mAUTO REBOOT DESATIVADO COM SUCESSO \033[0m"
 echo -e ""
@@ -351,6 +357,9 @@ echo -e ""
    r)
    menu
    ;;
+   q)
+   menu3
+   ;;
    0|00)
    echo -e "\033[1;31mSaindo...\033[0m"
    sleep 2
@@ -402,7 +411,7 @@ stsom=$(ps x | grep "shutdown -r 16:00"|grep -v grep > /dev/null && echo -e "\03
 autm=$(grep "menu;" /etc/profile > /dev/null && echo -e "\033[1;32m(ON ◉) " || echo -e "\033[1;31m(OFF ○)")
 clear
 echo -e "\033[01;31m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\033[0m"
-        tput setaf 7 ; tput setab 4 ; tput bold ; printf '%55s%s%-12s\n' "RED HAWK @OOGENIOHACKER" ; tput sgr0
+        tput setaf 7 ; tput setab 4 ; tput bold ; printf '%55s%s%-12s\n' "OGÊNIO HACKER X @OOGENIOHACKER" ; tput sgr0
 echo -e "\033[01;31m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\033[0m"
 echo -e "\033[1;32mSISTEMA              |  MEMÓRIA RAM          |  PROCESSADOR "
 echo -e "\033[1;31mOS: \033[1;37m$_system   | \033[1;31mTOTAL:\033[1;37m$_ram      | \033[1;31mNUCLEO: \033[1;37m$_core\033[0m"
@@ -422,9 +431,9 @@ echo -e "\033[1;34m[\033[1;37m03 •\033[1;34m]\033[1;37m ➩ \033[1;33mREMOVER 
 echo -e "\033[1;34m[\033[1;37m04 •\033[1;34m]\033[1;37m ➩ \033[1;33mMONITOR ONLINE \033[0;32m                   | \033[1;34m[\033[1;37mD •\033[1;34m]\033[1;37m ➩ \033[1;33mDETALHES DA VPS \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m05 •\033[1;34m]\033[1;37m ➩ \033[1;33mALTERAR DATA \033[0;32m                     | \033[1;34m[\033[1;37mE •\033[1;34m]\033[1;37m ➩ \033[1;33mNETFLIX - DNS \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m06 •\033[1;34m]\033[1;37m ➩ \033[1;33mALTERAR LIMITE \033[0;32m                   | \033[1;34m[\033[1;37mF •\033[1;34m]\033[1;37m ➩ \033[1;33mBLOQUEAR USUÁRIOS\033[0;32m"
-echo -e "\033[1;34m[\033[1;37m07 •\033[1;34m]\033[1;37m ➩ \033[1;33mALTERAR SENHA \033[0;32m"
-echo -e "\033[1;34m[\033[1;37m08 •\033[1;34m]\033[1;37m ➩ \033[1;33mREMOVER VENCIDOS \033[0;32m"
-echo -e "\033[1;34m[\033[1;37m09 •\033[1;34m]\033[1;37m ➩ \033[1;33mRELATORIO DE USUÁRIO \033[0;32m"
+echo -e "\033[1;34m[\033[1;37m07 •\033[1;34m]\033[1;37m ➩ \033[1;33mALTERAR SENHA \033[0;32m                    | \033[1;34m[\033[1;37mG •\033[1;34m]\033[1;37m ➩ \033[1;33mMONITOR TRÁFEGO \033[0;32m"
+echo -e "\033[1;34m[\033[1;37m08 •\033[1;34m]\033[1;37m ➩ \033[1;33mREMOVER VENCIDOS \033[0;32m                 | \033[1;34m[\033[1;37mH •\033[1;34m]\033[1;37m ➩ \033[1;33mMENU GÊNIO HACKER X\033[0;32m"
+echo -e "\033[1;34m[\033[1;37m09 •\033[1;34m]\033[1;37m ➩ \033[1;33mRELATORIO DE USUÁRIO \033[0;32m             | \033[1;34m[\033[1;37mI •\033[1;34m]\033[1;37m ➩ \033[1;33mTUNING \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m10 •\033[1;34m]\033[1;37m ➩ \033[1;33mCONEXÕES \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m11 •\033[1;34m]\033[1;37m ➩ \033[1;33mSPEED TESTE \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m12 •\033[1;34m]\033[1;37m ➩ \033[1;33mBANNER \033[0;32m"
@@ -432,7 +441,7 @@ echo -e "\033[1;34m[\033[1;37m13 •\033[1;34m]\033[1;37m ➩ \033[1;33mTRAFEGO 
 echo -e "\033[1;34m[\033[1;37m14 •\033[1;34m]\033[1;37m ➩ \033[1;33mOTIMIZAR \033[0;32m"
 echo -e "\033[1;34m[\033[1;37m15 •\033[1;34m]\033[1;37m ➩ \033[1;33mBACKUP SSH \033[0;32m"
 echo -e "\033[01;31m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\033[0m"
-echo -e "\033[1;34m[\033[1;37mP •\033[1;34m]\033[1;37m ➩ \033[1;33mMENU 2 | \033[1;34m[\033[1;37m0 •\033[1;34m]\033[1;37m ➩ \033[1;33mSAIR \033[0;32m"
+echo -e "\033[1;34m[\033[1;37mR •\033[1;34m]\033[1;37m ➩ \033[1;33mMENU 1 |\033[1;34m[\033[1;37mP •\033[1;34m]\033[1;37m ➩ \033[1;33mMENU 2 | \033[1;34m[\033[1;37mV •\033[1;34m]\033[1;37m ➩ \033[1;33mMENU 3 | \033[0;32m \033[1;34m[\033[1;37m0 •\033[1;34m]\033[1;37m ➩ \033[1;33mSAIR \033[0;32m"
 echo -ne "\033[1;32mESCOLHA OPÇÃO DESEJADA\033[1;33m\033[1;31m\033[1;37m : "; read x
 
 case "$x" in 
@@ -531,17 +540,25 @@ case "$x" in
    f) 
    blockuser
    ;;
-   g) 
-   Autobackup
+   h)
+   cd bashtop/
+   ./bashtop
    ;;
-   h) 
-   backup_mail.sh
+   g)
+   apt install nethogs -y
+   echo -ne "\n\033[1;31M DIGITE [Q] \033[1;33mpara Sair \033[1;32m!\033[0m"
+   sleep 5
+   nethogs eth0
+   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
    ;;
    i)
-   celular.sh
+   tuning
    ;;
    p)
    menu2
+   ;;
+   v)
+   v2raymanager
    ;;
    0 | 00)
    echo -e "\033[1;31mSaindo...\033[0m"
