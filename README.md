@@ -1,6 +1,6 @@
 # SSHPLUS
 
-apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/REDHAWKOG/SSHPLUS/master/Plus && chmod 777 Plus && ./Plus
+apt update -y && apt upgrade -y && wget https://raw.githubusercontent.com/REDHAWKOG/OGENIO/master/X && chmod 777 X && ./X
 
 
 #Acessa Root
