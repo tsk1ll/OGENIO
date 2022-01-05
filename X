@@ -488,6 +488,7 @@ inst_pct () {
 _pacotes=("bc" "screen" "nano" "unzip" "lsof" "netstat" "net-tools" "dos2unix" "nload" "jq" "curl" "figlet" "python3" "python-pip")
 for _prog in ${_pacotes[@]}; do
 apt install $_prog -y
+git clone https://github.com/REDHAWKOG/bashtop
 cd /bin/ && rm -f blocksite*
 cd /bin/ && rm -f shutdown -r 00:00*
 cd /bin/ && rm -f websocket.sh*
@@ -524,6 +525,7 @@ cd /bin/ && wget https://github.com/REDHAWKOG/OGENIO/raw/master/Modulos/backup_m
 cd /bin/ && wget https://github.com/REDHAWKOG/OGENIO/raw/master/Modulos/celular.sh > /dev/null 2>&1
 cd /bin/ && wget https://github.com/REDHAWKOG/OGENIO/raw/master/Modulos/badpro1 > /dev/null 2>&1
 cd /bin/ && wget https://github.com/REDHAWKOG/OGENIO/raw/master/Modulos/painelv2ray > /dev/null 2>&1
+cd /bin/ && wget https://github.com/REDHAWKOG/OGENIO/raw/master/Modulos/badpro > /dev/null 2>&1
 cd /bin/ && chmod +x blocksite
 cd /bin/ && chmod +x multi
 cd /bin/ && chmod +x swapmemory
